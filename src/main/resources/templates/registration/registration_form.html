@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<br>
+<br>
+
+<div class = "container">
+    <div class = "row">
+        <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class = "text-center"> User Data </h1>
+            <div class = "card-body">
+                <form th:action="@{/registration}" th:object = "${request}" method="POST">
+                    <div class ="form-group">
+                        <label> User email </label>
+                        <input
+                                type = "text"
+                                name = "email"
+                                th:field = "*{email}"
+                                class = "form-control"
+                                placeholder="Enter User Email"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> User Password </label>
+                        <input
+                                type = "text"
+                                name = "password"
+                                th:field = "*{password}"
+                                class = "form-control"
+                                placeholder="Enter User Password"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> User Role </label>
+                        <input
+                                type = "text"
+                                name = "userRole"
+                                th:field = "*{userRole}"
+                                class = "form-control"
+                                placeholder="ADMIN or USER"
+                        />
+                    </div>
+
+                    <div class = "box-footer">
+                        <button type="submit" class = "btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
